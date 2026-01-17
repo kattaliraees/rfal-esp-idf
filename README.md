@@ -23,6 +23,8 @@ This is a port of the STMicroelectronics **RFAL (Radio Frequency Abstraction Lay
 
 Add the dependency to your `idf_component.yml`:
 
+Use menuconfig for SPI pin mapping
+
 ```yaml
 dependencies:
   kattaliraees/rfal-esp-idf: "*"
