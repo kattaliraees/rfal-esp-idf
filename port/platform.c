@@ -20,13 +20,12 @@ static platformIrqCallback_t st25r_irq_cb = NULL;
  *  Pin mapping
  * ============================================================ */
 
-#define NFC_SPI_MOSI_PIN   GPIO_NUM_36
-#define NFC_SPI_MISO_PIN   GPIO_NUM_37
-#define NFC_SPI_SCLK_PIN   GPIO_NUM_35
-#define NFC_SPI_SS_PIN     GPIO_NUM_0
-#define NFC_INTR_PIN       GPIO_NUM_38
-
-#define NFC_SPI_HOST       SPI2_HOST
+#define NFC_SPI_MOSI_PIN   CONFIG_NFC_SPI_MOSI_PIN
+#define NFC_SPI_MISO_PIN   CONFIG_NFC_SPI_MISO_PIN
+#define NFC_SPI_SCLK_PIN   CONFIG_NFC_SPI_SCLK_PIN
+#define NFC_SPI_SS_PIN     CONFIG_NFC_SPI_SS_PIN
+#define NFC_INTR_PIN       CONFIG_NFC_INTR_PIN
+#define NFC_SPI_HOST       (spi_host_device_t)CONFIG_NFC_SPI_HOST
 
 /* ============================================================
  *  SPI handle
@@ -185,7 +184,7 @@ void platformIrqST25RPinInitialize(void)
     };
     gpio_config(&io_conf);
 
-    gpio_isr_handler_add(ST25R_INT_PIN, st25r_irq_isr, NULL);
+    gpio_isr_handler_add(NFC_INTR_PIN, st25r_irq_isr, NULL);
 
     // Create IRQ handling task
     if (rfal_irq_task_handle == NULL) {

@@ -1,0 +1,45 @@
+menu "ST25R NFC Configuration"
+
+    config NFC_SPI_HOST
+        int "NFC SPI Host"
+        default 1
+        range 1 2
+        help
+            SPI host to use for NFC communication (1=SPI2, 2=SPI3)
+
+    config NFC_SPI_MOSI_PIN
+        int "NFC SPI MOSI Pin"
+        default 36
+        range 0 39
+        help
+            GPIO pin for NFC SPI MOSI signal
+
+    config NFC_SPI_MISO_PIN
+        int "NFC SPI MISO Pin"
+        default 37
+        range 0 39
+        help
+            GPIO pin for NFC SPI MISO signal
+
+    config NFC_SPI_SCLK_PIN
+        int "NFC SPI SCLK Pin"
+        default 35
+        range 0 39
+        help
+            GPIO pin for NFC SPI clock signal
+
+    config NFC_SPI_SS_PIN
+        int "NFC SPI SS Pin"
+        default 0
+        range 0 39
+        help
+            GPIO pin for NFC SPI slave select signal
+
+    config NFC_INTR_PIN
+        int "NFC Interrupt Pin"
+        default 38
+        range 0 39
+        help
+            GPIO pin for NFC interrupt signal
+
+endmenu
