@@ -1,4 +1,4 @@
-# RFAL for ESP-IDF
+# ST25RFAL for ESP-IDF
 
 This is a port of the STMicroelectronics **RFAL (Radio Frequency Abstraction Layer)** to the **Espressif ESP-IDF** framework. It enables the use of ST25R series NFC readers (specifically **ST25R3911/B**) with ESP32 microcontrollers.
 
